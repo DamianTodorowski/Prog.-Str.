@@ -56,3 +56,32 @@ int main()
     printf(" adres mniejszej: %p",min(&x,&y));
     return 0;
 }
+
+
+
+----------------------------------3.2.3-----------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void zamien(int*x, int *y)
+{
+    int pom=*x;
+    *x=*y;
+    *y=pom;
+
+}
+int main()
+{
+
+    int a=17;
+    int b=9;
+    printf("a=%d\n", a);
+    printf("b=%\n", b);
+    zamien(&a,&b);
+     printf("a=%d\n", a);
+    printf("b=%d\n", b);
+
+    return 0;
+}
+
