@@ -85,3 +85,249 @@ int main()
     return 0;
 }
 
+-------------------------------3.2.4------------------------------------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void zamien(int*x, int *y)
+  {
+
+    if(*x>*y)
+        {
+    int pom=*x;
+    *x=*y;
+    *y=pom;
+    }
+
+}
+int main()
+{
+
+    int a=17;
+    int b=9;
+    printf("a=%d\n", a);
+    printf("b=%\n", b);
+    zamien(&a,&b);
+     printf("a=%d\n", a);
+    printf("b=%d\n", b);
+
+    return 0;
+}
+
+
+---------------------------------3.2.5---------------------------------------------
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int suma( const int*x,  const int *y)
+  {
+    return *x+*y;
+
+}
+int main()
+{
+
+    int a=17;
+    int b=9;
+
+    printf("%d",suma(&a,&b));
+
+    return 0;
+}
+
+---------------------------------------3.2.6--------------------------------------
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+void przypisz ( int n, int *w)
+{
+    *w=n;
+}
+int main()
+{
+    int x=5;
+    przypisz(3,&x);
+    printf("%d",x);
+    return 0;
+}
+
+
+-------------------------------3.2.9---------------------------------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int* rezerwuj()
+{
+  return malloc(sizeof(int));
+}
+
+
+int main()
+{
+    int * wsk=rezerwuj();
+     printf("%p\n",wsk);
+    printf("%d",*wsk);
+    return 0;
+}
+
+
+---------------------------------3.2.11 --------------------------------------------
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int * rezerwuj (unsigned int n)
+{
+    return malloc(n*sizeof(int));
+}
+
+int main()
+{
+
+        int * wsk=rezerwuj(10);
+     printf("%p\n",wsk);
+
+    return 0;
+
+    return 0;
+}
+
+
+-------------------------------3.2.13---------------------------------------------
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+double f(int x)
+{
+    return 3*x;
+
+}
+
+double gie(double  (*f)(int x), int n)
+{
+  return f(n);
+}
+
+
+int main()
+{
+
+
+    printf("%f\n", gie(&f,8));
+    return 0;
+}
+
+
+-------------------------------3.2.14--------------------------------------------
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+int f(int x)
+{
+    return 3*x;
+
+
+}
+
+int g(int x)
+{
+    return x*x;
+
+}
+
+bool h (int  (*f)(int x),int (*g)(int x), int n)
+{
+  if(g(n)==f(n))
+  {
+      return true;
+  }
+  return false;
+}
+
+
+int main()
+{
+
+
+    printf("%d\n", h(&f,&g,3));
+    return 0;
+}
+  
+
+
+
+
+------------------------------------modyfikacja jakiegoś zadania------------------
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+int f(int x)
+{
+    return 3*x;
+
+
+}
+
+int g(int x)
+{
+    return x*x;
+
+}
+
+bool h (int  (*f)(int x),int (*g)(int x), int n)
+{
+    for(int i =0;i<=n;i++)
+    {
+  if(g(i)==f(i))
+  {
+      return false;
+  }
+
+    }
+    return true;
+}
+
+
+int main()
+{
+
+
+    printf("%d\n", h(&f,&g,3));
+    return 0;
+}
+
+
+
+
+
