@@ -1,0 +1,58 @@
+-----------------------------------3.2.1---------------------------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int min(int *x, int *y)
+{
+    if(*x<*y)
+    {
+        return *x;
+    }
+
+    else{
+        return *y;
+    }
+}
+
+int main()
+{
+
+    int a=7;
+    int b=9;
+    printf("%d",min(&a,&b));
+    return 0;
+}
+
+
+-----------------------------------3.2.2------------------------------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int* min(int *x, int *y)
+{
+    if(*x<*y)
+    {
+        return x;
+    }
+
+    else{
+        return y;
+    }
+}
+
+int main()
+{
+
+    int x=7;
+    int y=9;
+    printf("%p\n",&x);
+    printf("%p\n",&y);
+    printf(" adres mniejszej: %p",min(&x,&y));
+    return 0;
+}
