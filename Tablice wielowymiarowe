@@ -1,0 +1,74 @@
+//----------------------------------------------zad1---------------------------
+int **alokuj(int n, int m)
+{
+    int **t=malloc(n*sizeof(int*));
+    int i;
+    for(i=0;i<n;i++)
+    {
+        t[i]=malloc(m*sizeof(int));
+    }
+    return t;
+}
+//----------------------------------------------zad2---------------------------
+int(* alokuj2(unsigned intn,unsigned intm))[]{
+  return malloc(n*sizeof(int[m]));
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <wchar.h>
+#include <string.h>
+
+
+void wypisz(int **t,int n,int m)
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            printf("%d\t",t[i][j]);
+        }
+        printf("\n");
+    }
+}
+int **alokuj(int n, int m)
+{
+    int **t=malloc(n*sizeof(int*));
+    int i;
+    for(i=0;i<n;i++)
+    {
+        t[i]=malloc(m*sizeof(int));
+    }
+    return t;
+}
+void wczytaj(int **t,int n,int m)
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            scanf("%d",&t[i][j]);
+        }
+        printf("\n");
+    }
+}
+void zwolnij(unsigned int n, unsigned int m, int **t)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        free(t[i]);
+    }
+    free(t);
+}
+int **alokuj3(int n)  //zad7
+{
+    int **t=malloc(n*sizeof(int*));
+    int i,j;
+    for(i=0;i<n;i++)
+    {
+        t[i]=malloc((i+1)*sizeof(int));         //(n-1) gorna trojkatna // pierscienna n,2*sizeofint
+    }
+    return t;
+}
+int **alokuj4
